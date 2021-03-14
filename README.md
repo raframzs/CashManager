@@ -22,7 +22,7 @@ gem 'sqlite3', '~> 1.4'
 #### 2. Para enviar cambios
 `git commit -m "changes in x"` "realize avances en x o y"
 
-`git remote add origin https://github.com/raframzs/EmulatorApp.git` Esto se hace solo la primera
+`git remote add origin https://github.com/raframzs/CashManager.git` Esto se hace solo la primera
 vez para adicionar el origen o destino de los cambios a enviar
 
 `git push -u origin master` Para enviar los cambios que se aplicaron en el commit.
