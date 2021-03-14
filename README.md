@@ -9,6 +9,9 @@ Things you may want to cover:
 
 * Rails Version 6.1.3
 
+* Para correr la aplicación pueden guiarse por esto
+`'https://stackoverflow.com/questions/22167838/how-to-clone-and-run-another-users-rails-app'`
+
 ### Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3'
 ### Use sqlite3 as the database for Active Record
