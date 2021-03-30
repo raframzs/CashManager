@@ -1,0 +1,758 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+::-webkit-scrollbar{
+    width: .5%;
+    height: .5%;
+  }
+  ::-webkit-scrollbar-track{
+    background-color: #ffffff;
+  }
+  ::-webkit-scrollbar-thumb{
+    background-color: #808080;
+    border-radius: 30px;
+  }
+  ::-webkit-scrollbar-thumb:hover{
+    background-color: #DCAC15;
+  }
+.mensaje{
+    position: absolute;
+    width: 100%;
+    top: 250px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bolder;
+}
+/* precarga */
+.preloader{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 100000;
+    background-color: #E0E0E0;
+}
+.preloader span{
+    height: 20px;
+    width: 20px;
+    background-color: #DCAC15;
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    animation: wave 2s ease-in-out infinite;
+}
+.preloader span:nth-child(1){
+    left: -50px;
+    animation-delay: 0s;
+}
+.preloader span:nth-child(2){
+    left: -20px;
+    animation-delay: .1s;
+}
+.preloader span:nth-child(3){
+    left: 10px;
+    animation-delay: .2s;
+}
+.preloader span:nth-child(4){
+    left: 40px;
+    animation-delay: .3s;
+}
+@keyframes wave{
+    0%,
+    75%,
+    100%{
+        transform: translateY(0) scale(1);
+    }
+    25%{
+        transform: translateY(40px);
+    }
+    50%{
+        transform: translateY(40px) scale(1.1);
+    }
+}
+/* estilos de los contenedores principales */
+.page, .page_log{
+    display: block;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    background-color: #ffffff;
+}
+.footer{
+    width: 100%;
+    height: 10%;
+    align-items: center;
+    text-align: center;
+    z-index: 20;
+    background-color: #000000;
+    position: absolute;
+    bottom: 0;
+    color: #ffffff;
+}
+.copy_log{
+    width: auto;
+    height: auto;
+    position: relative;
+    font-size: 12px;
+    margin-top: 2%;
+}
+.copy{
+    width: auto;
+    height: auto;
+    position: relative;
+    font-size: 12px;
+    margin-top: 10%;
+}
+/* Estilos de la pagina Index */
+/* iniciar session campos*/
+.page_log{
+    height: 90%;
+}
+.login{
+    width: 50%;
+    height: 100%;
+    display: table;
+    position: absolute;
+    float: left;
+}
+.login form{
+    width: 100%;
+    height: 100%;
+    padding: 2%;
+    display: table-cell;
+    position: absolute;
+    text-align: center;
+    vertical-align: middle;
+    
+}
+.input_Log_text{
+    position: relative;
+    padding: 2% 8%;
+    margin-bottom: 5%;
+    border: none;
+    border-bottom: solid #DCAC15 1px;
+    outline: none;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 22px;
+}
+.input_Log_submit{   
+    padding: 2% 4%;
+    color: #ffffff;
+    background-color: #000000;
+    border-radius: 30px;
+    border: solid 2px #000000;
+    margin-top: 5%;
+    font-size: 18px;
+    cursor: pointer;
+}
+.input_Log_submit:hover{
+    background-color: #ffffff;
+    color: #000000;
+    transition: .5s;
+    outline: none;
+}
+.input_sing_text{
+    position: relative;
+    font-size: 16px;
+    padding: 2% 4%;
+    margin-bottom: 5%;
+    border: solid #DCAC15 1px;
+}
+.images{
+    width: 50%;
+    height: 100%;
+    float: right;
+    overflow-x: hidden;
+    background-image: url('../img/kia_cerato.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left;
+}
+/* pagina principal */
+
+.nav{
+    position: fixed;
+    background-color: #ffd369;
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    z-index: 100000;
+    border-radius: 0 4px 4px 0;
+    box-shadow: 0px 0px 25px -16px #000000;
+}
+.navdiv{
+    position: relative;
+    height: 90%;
+    margin-bottom: auto;
+    overflow-y: auto;
+}
+
+.navdiv .nav_input, .navdiv .nav_input_look{
+    display: block;
+    width: 75%;
+    padding: 5% 15%;
+    text-transform: capitalize;
+    padding-right: 10%;
+    text-align: justify;
+    text-decoration: none;
+    background-color: #393e46;
+    color: #ffffff;
+    /* transition: .2s ease-in-out; */
+    transition:all .2s;
+}
+.navdiv .nav_input_look{
+    cursor: initial;
+    background-color: #222831;
+    color: #ffffff;
+    font-size: 20px;
+    box-shadow: 0px 0px 20px -16px #000000;
+}
+.navdiv .nav_input i,.navdiv  .nav_input_look i{
+    margin-right: 10%;    
+}
+.nav_input_look > i{
+    border-bottom: solid 2px #ffffff;
+}
+.navdiv .nav_input:hover > i{
+    padding-bottom: 2%;
+    border-bottom: solid 2px #ffffff;
+}
+.navdiv .nav_input:hover{
+    background-color: #222831;
+    color: #ffffff;
+    font-size: 20px;
+    width: 80%;
+    padding: 5% 15%;
+    padding-right: 5%;
+    transition:all .2s;
+    cursor: pointer;
+}
+
+.footer_tot a.nav_input{
+    text-align: center;
+    width: 100%;
+    padding: 0 40%;
+    text-decoration: none;
+    color: #000000;
+}
+a.nav_input i{
+    margin-right: 1%;
+}
+a.nav_input:hover{
+    padding: 1.2%;
+}
+.user_icon div i{
+    width: auto;
+    height: auto;
+    margin: 10%;
+    margin-bottom: 0;
+    padding: 6% 5%;
+    text-align: center;
+    font-size: 80px;
+}
+.nombre{
+    margin: 5%;
+    margin-bottom: 10%;
+    padding-bottom: 5%;
+    text-transform: capitalize;
+    /* border-bottom: solid 2px #000000; */
+}
+.details{
+    width: 80%;
+    height: 100%;
+    float: right;
+}
+/* dashboard */
+.agr_vehi{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    text-align: center;
+}
+.agr_vehi > form{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    padding: 15% 0 0 0;
+    background-color: #ffffff;
+    /* box-shadow: 0px 0px 25px -16px #000000; */
+}
+.btn_agr_vehi, .btn_can_vehi{
+    width: auto;
+    height: auto;
+    font-size: 16px;
+    padding: 1% 2%;
+    border: none;
+    transition: .2s;
+    cursor: pointer;
+    border: solid 1px #000000;
+}
+.btn_agr_vehi{
+    margin-left: 10%;
+}
+.btn_can_vehi:hover{
+    background-color: #ffffff;
+    color: #000000;
+    transition: .2s;
+    transform: scale(1.1);
+    border-color:  #000000;
+}
+.btn_agr_vehi:hover{
+    background-color: #000000;
+    color: #ffffff;
+    transition: .2s;
+    transform: scale(1.1);
+    border-color: #000000;
+}
+.dash_board{
+    width: 100%;
+    height: 90%;
+    position: relative;
+    color: #808080;
+}
+.dash_izq{
+    position: relative;
+    float: left;
+    width: 67.5%;
+    height: auto;
+    margin: 5% 3%;
+    margin-right: 0;
+}
+.dash, .dash_1, .dash_d, .dash_conductor{
+    width: 100%;
+    height: auto;
+    display: flex;
+    position: absolute;
+    text-align: center;
+    background-color: #ffffff;
+}
+.dash{
+    position: relative;
+    margin: 5% 0;
+}
+.dash_1, .dash_d, .dash_conductor{
+    display: inline-block;
+}
+.cont_placa, .cont_mant{
+    width: auto;
+    height: auto;
+    float: left;
+    margin: 5%;
+    margin-right: 0;
+    margin-bottom: 0;
+}
+.placa, .mant{
+    width: 200px;
+    height: auto;
+    box-sizing: border-box;
+    position: relative;
+    padding: 20px 40px;
+    font-size: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    border: none;
+    background-color: #CDCDCD;
+    color: #808080;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 25px -16px #000000;
+    transition: all .4s ease-in-out;
+}
+.placa:hover,.mant:hover{
+    cursor: pointer;
+    color: #000000;
+    background-color: #ffffff;
+    transform: scale(1.1);
+    border-radius: 10px;
+    transition: .2s ease-in;
+}
+.dash_conductor{
+    display: none;
+}
+.conductor{
+    width: 20%;
+    height: auto;
+    float: left;
+    text-transform: capitalize;
+    box-shadow: 0px 0px 25px -16px #000000;
+}
+.conductor img{
+    width: 100%;
+    height: 300px;
+}
+.conductor p{
+    margin: 0 10%;
+    border: solid 1px #ffffff;
+    border-radius: 33px;
+    background-color: #43CF0D;
+    color: #ffffff;
+}
+.mant{
+    display: block;
+    font-size: 100px;
+    text-decoration: none;
+    background-color: #ffffff;
+}
+.mant p{
+    font-size: 10px;
+}
+.total, .addfecha{
+    width: 250px;
+    margin: 0 2%;
+    padding: 5%;
+    text-align: center;
+    background-color: #ffffff;
+    border: solid 1px #F7F7F7;
+    border-radius: 4px;
+    box-shadow: 0px 0px 25px -16px #000000;
+    transition: all .2s;
+}
+.total:hover, .addfecha:hover{
+    cursor: pointer;
+    border: solid 1px #ffffff;
+    transform: scale(1.5);
+    transition: all .5s;
+    z-index: 100000;
+}
+/* .efectivo{
+    width: 35%;
+    position: absolute;  
+    margin: 0 auto;
+    bottom: 0;  
+    padding: 5%;
+    text-align: center;
+    border: solid 1px #808080;
+} */
+.item_efectivo{
+    border: none;
+    padding: 2%;
+    font-size: 20px;
+    font-weight: bolder;
+    bottom: 0;
+}
+.add_conductor_details{
+    display: none;
+}
+.foto_conductor b{
+    display: block;
+    margin-top: 70%;
+}
+.input_file{
+    width: 100%;    
+}
+.input_text{
+    border: none;
+    border-bottom: solid 1px #DCAC15;
+    margin-bottom: 5px;
+    font-size: 25px;
+}
+.alerta{
+    display: none;
+    width: 90%;
+    height: 50%;
+    padding: 25% 5%;
+    position: absolute;
+    text-align: center;
+    background-color: #ffffff;
+}
+.detalle_conductor{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-bottom: 2%;
+    box-shadow: 0px 0px 25px -16px #000000;
+}
+.foto_conductor{
+    padding: 5%;
+    width: 30%;
+}
+.foto_conductor img{
+    width: 100%;
+    height: 100%;
+    border: solid 1px #808080;
+}
+.datos_conductor, .editCon{
+    width: 52%;
+    height: 90%;
+    padding: 5% 0;
+}
+.editCon{
+    height: 80%;
+}
+.datos_conductor p{
+    text-transform: capitalize;
+}
+.menu_conductor{
+    width: 6%;
+    height: 100%;
+    padding: 1%;
+    margin: auto 0;
+    vertical-align: middle;
+    position: relative;
+    text-align: center;
+}
+.menu_conductor div{
+    width: 80%;
+    height: 5%;
+    position: relative;
+    padding: 10% 5%;
+    margin-bottom: 20%;
+    border: solid 1px #808080;
+}
+.menu_conductor div:hover{
+    cursor: pointer;
+    color: #DCAC15;
+}
+.editCon{
+    display: none;
+    position: absolute;
+    top: 0;    
+    background-color: #ffffff;
+}
+.inputEditCon{
+    text-transform: capitalize;
+    border: none;
+    outline: none;
+    color: #808080;
+    font-size: 17px;
+}
+.inputEditConEdit{
+    text-transform: capitalize;
+    border: none;
+    border-bottom: solid 1px #DCAC15;    
+    color: #808080;
+    font-size: 17px;
+}
+.dash_der{
+    position: absolute;
+    right: 0;
+    width: auto;
+    height: auto;
+    margin: 3.5% 0;
+    margin-left: 5%;
+    padding: 0 2%;
+    background-color: #ffffff;
+    border:solid .5px #F7F7F7;
+    border-radius: 8px;
+    box-shadow: 0px 0px 25px -16px #000000;
+}
+.info_der{
+    position: relative;
+    font-size: 15px;
+    text-transform: uppercase;
+    margin-top: 8%;
+    margin-bottom: 8%;
+    height: auto;
+    transition: all .4s ease-in;
+}
+.info_der:hover{
+    background-color: #ffffff;
+    padding: 2%;
+    text-align: center;
+    transform: scale(1.8) translateX(-15%);
+    border-radius: 8px;
+    box-shadow: 0px 0px 25px -16px #000000;
+    transition: all .4s ease-in;
+}
+.info_des{
+    width: auto;
+    padding: 2% 0;
+}
+.date{
+    width: 50%;
+    padding: 2%;
+    margin: auto;
+    text-align: center;
+    font-size: 13px;
+    background-color: #43CF0D;
+    border-radius: 10px;
+    color: #ffffff;
+}
+.ingresarDatosIG{
+    width: 90%;
+    height: 40%;
+    margin: 0 5%;
+    margin-top: 5%;
+}
+table{
+    width: 100%;
+    height: auto;
+    position: relative;
+    border-radius: 4px;
+    background-color: #F3F3F3;
+    text-align: center;
+    box-shadow: 0px 0px 25px -16px #000000;
+}
+.thead_IG{
+    font-size: 18px;
+    border: none;
+    background-color: #DCAC15;
+}
+.fila_IG{
+    width: 100%;
+}
+.thead_IG > tr td{
+    padding: 1% 0;
+    top: 0;
+}
+.celda_IG_fecha, .celda_IG_monto, .celda_IG_com{
+    width: auto;
+    padding: 1%;
+    box-sizing: border-box;
+    background-color: #ffffff;
+}
+.celda_IG_fecha{
+    width: 20%;
+}
+.celda_IG_monto{
+    width: 20%;
+}
+.celda_IG_com{
+    width: 40%;
+    height: auto;
+    text-align: left;
+}
+.inputIG, .inputIGEst{
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    border: none;
+}
+.inputIGEst {
+    font-size: 14px;
+}
+.submit{
+    float: right;
+    margin-top: 2%;
+    padding: 1% 2%;
+    text-decoration: none;
+    color: #000000;
+    border:solid 1px #000000;
+    background-color: #ffffff;
+    transition: .2s;
+}
+.submit_i{
+    margin-top: 2%;
+    padding: 1% 2%;
+    border:solid 1px #000000;
+    background-color: #ffffff;
+    transition: .2s;
+}
+.submit:hover, .submit_i:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: .2s;
+}
+
+h3{
+    margin: 2%;
+}
+.dash_IG{
+    top: 0;
+    margin: 5%;
+    width: 90%;
+    height: 80%;
+    position: relative;
+}
+.footer_tot{
+    display: block;
+    position: relative;
+    width: 80%;
+    text-align: center;
+    position: fixed;  
+    background-color: #DCAC15;
+    bottom: 0;
+    transition: all .5s ease-in-out;
+}
+.footer_tot p{
+    padding: 1.5% 0;
+}
+.footer_tot:hover{
+    height: auto;
+    font-size: 25px;
+    transition:.5s;
+}
+/* pagina documentos */
+.dash_d{
+    margin: 0;
+}
+.addfecha{
+    margin-right: 0;
+    margin-bottom: 5%;
+    width: 250px;
+    height: 20px;
+    float: left;
+}
+.addfecha:hover{
+    transform: scale(1.2);
+}
+.protector{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #808080;
+    opacity: .4;
+}
+#T_O, #R_T, #SOAT, #S_R_C, #S_R_E, #R_P, #TAX, #EXT, #GAS, #TGAS{
+    display: none;
+    width: 52%;
+    padding: 2% 1%;
+    top: 35%;
+    margin: auto;
+    position: fixed;
+    background-color: #ffffff;
+    border-radius: 3px;
+}
+.agre_PR{
+    z-index: 1000;
+    display: none;
+    position: fixed;
+    width: 70%;
+    top: 5%;
+    right: 0;
+    height: auto;
+    margin: 0 5%;
+    background-color: #ffffff;
+    box-shadow: 0 3px 20px 1px #000000;
+}
+.agre_PR form{
+    padding: 5%;
+}
+.prove, .rep{
+    width: 39.5%;
+    height: auto;
+    padding: 2.5% 5%;
+    margin: auto 0;
+    background-color: #ffffff;
+}
+.input_Prove{
+    width: 70%;
+    padding: 1% 2%;
+    margin: 2% 13%;
+    margin-bottom: 5%;
+    font-size: 18px;
+    border: none;
+    border-bottom: solid 1px #DCAC15;
+}
+.text_center{
+    text-align: center;
+    color: #808080;
+}
+.text-left{
+    text-align: left;
+    color: #808080;
+}
+.linea_div{
+    width: .2%;
+    height: 300px;
+    margin: auto;
+    color: #808080;
+    background-color: #808080;
+}
