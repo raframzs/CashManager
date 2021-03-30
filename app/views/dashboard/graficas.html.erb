@@ -20,8 +20,8 @@
     <%= link_to raw('<i class="fas fa-home"></i>inicio'), {action: 'inicio'},class:'nav_input' %>
     <%= link_to raw('<i class="fas fa-balance-scale-right"></i>bolsillos'), {action: 'bolsillos'},class:'nav_input' %>
     <%= link_to raw('<i class="fas fa-chart-pie"></i>balances'), {action: 'balances'},class:'nav_input' %>
-    <%= link_to raw('<i class="fab fa-get-pocket"></i>graficas'), {action: 'graficas'},class:'nav_input' %>
-    <a class="nav_input_look"><i class="fas fa-history"></i>historico</a>   
+    <a class="nav_input_look"><i class="fab fa-get-pocket"></i>graficas</a>    
+    <%=link_to raw('<i class="fas fa-history"></i>historico'), {action: 'historico'}, class: 'nav_input'%>   
     </div>
     <div class="footer">
             <p class="copy">&copy; 2020 <%= @name %></p>
@@ -31,7 +31,7 @@
         <div class="dash_board">
             
             <div class="dash_1" id="dash_1">
-            historico
+            graficas
             
             </div>
             

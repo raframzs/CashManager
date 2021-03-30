@@ -18,9 +18,9 @@
         nombre usuario
         </h2>
     <a class="nav_input_look"><i class="fas fa-home"></i>inicio</a>
-    <a class="nav_input"><i class="fas fa-balance-scale-right"></i>bolsillos</a>
-    <a class="nav_input"><i class="fas fa-chart-pie"></i>balances</a>
-    <a class="nav_input"><i class="fab fa-get-pocket"></i>graficas</a>    
+    <%= link_to raw('<i class="fas fa-balance-scale-right"></i>bolsillos'), {action: 'bolsillos'},class:'nav_input' %>
+    <%= link_to raw('<i class="fas fa-chart-pie"></i>balances'), {action: 'balances'},class:'nav_input' %>
+    <%=link_to raw('<i class="fab fa-get-pocket"></i>graficas'), {action: 'graficas'}, class: 'nav_input'%>    
     <%=link_to raw('<i class="fas fa-history"></i>historico'), {action: 'historico'}, class: 'nav_input'%>
     </div>
     <div class="footer">
@@ -31,7 +31,7 @@
         <div class="dash_board">
             
             <div class="dash_1" id="dash_1">
-            
+            inicio
             
             </div>
             
