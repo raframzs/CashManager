@@ -1,43 +1,198 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="favicon" href="../favicon.png">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <title>Cash Manager</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="favicon" href="../favicon.png">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <title>Cash Manager</title>
 </head>
+
+<style>
+
+    .myButton {
+        box-shadow: inset 0px 1px 0px 0px #fff6af;
+        background: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+        background-color: #ffec64;
+        border-radius: 6px;
+        border: 1px solid #ffaa22;
+        display: inline-block;
+        cursor: pointer;
+        color: #333333;
+        font-family: Arial, serif;
+        font-size: 15px;
+        font-weight: bold;
+        padding: 7px 24px;
+        text-decoration: none;
+        text-shadow: 0px 1px 0px #ffee66;
+    }
+
+    .myButton:hover {
+        background: linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+        background-color: #ffab23;
+    }
+
+    .myButton:active {
+        position: relative;
+        top: 1px;
+    }
+</style>
+
 <body>
-    
+
 <div class=page>
-    <nav class="nav">
+  <nav class="nav">
     <div class="navdiv">
-        <div class="user_icon"><div><i class="fas fa-user-alt"></i></div></div>
-        <h2 class="nombre">  
+      <div class="user_icon">
+        <div><i class="fas fa-user-alt"></i></div>
+      </div>
+      <h2 class="nombre">
         nombre usuario
-        </h2>
-    <%= link_to raw('<i class="fas fa-home"></i>inicio'), {action: 'inicio'},class:'nav_input' %>
-    <a class="nav_input_look"><i class="fas fa-balance-scale-right"></i>bolsillos</a>
-    <%= link_to raw('<i class="fas fa-chart-pie"></i>balances'), {action: 'balances'},class:'nav_input' %>
-    <%= link_to raw('<i class="fab fa-get-pocket"></i>graficas'), {action: 'graficas'},class:'nav_input' %>
-    <%=link_to raw('<i class="fas fa-history"></i>historico'), {action: 'historico'}, class: 'nav_input'%>  
+      </h2>
+      <%= link_to raw('<i class="fas fa-home"></i>inicio'), { action: 'inicio' }, class: 'nav_input' %>
+      <a class="nav_input_look"><i class="fas fa-balance-scale-right"></i>bolsillos</a>
+      <%= link_to raw('<i class="fas fa-chart-pie"></i>balances'), { action: 'balances' }, class: 'nav_input' %>
+      <%= link_to raw('<i class="fab fa-get-pocket"></i>graficas'), { action: 'graficas' }, class: 'nav_input' %>
+      <%= link_to raw('<i class="fas fa-history"></i>historico'), { action: 'historico' }, class: 'nav_input' %>
     </div>
     <div class="footer">
-            <p class="copy">&copy; 2020 <%= @name %></p>
+      <p class="copy">&copy; 2020 <%= @name %></p>
     </div>
-    </nav>
-    <div class="details">
-        <div class="dash_board">
-            
-            <div class="dash_1" id="dash_1">
-            
-            bolsillo
+  </nav>
+  <div class="details">
+    <div class="dash_board">
+
+      <h1 class="display-4 ml-2 mt-2">Bolsillos</h1>
+
+      <!-- New Pocket -->
+      <div class="row p-5 text-center">
+
+        <a href="#" class="myButton">
+          <div class="row"> + </div>
+          <div class="row">Nuevo Bolsillo</div>
+        </a>
+      </div>
+
+      <!-- Number of pockets -->
+      <div class="row p-5">
+        <div class="col ml-2 mr-2">
+
+          <!-- Pocket one -->
+          <div class="card border-dark mb-3" style="max-width: 18rem;">
+            <div class="card-body text-dark">
+              <h5 class="card-title text-center" style="color: #ffd369">
+                <strong>$</strong> 1'234.567,21
+              </h5>
             </div>
-            
+            <div class="card-footer bg-transparent border-dark text-center">
+              <strong>Bancolombia Ahorros</strong>
+            </div>
+          </div>
 
         </div>
+
+        <div class="col ml-2 mr-2">
+
+          <!-- Pocket two -->
+          <div class="card border-dark mb-3" style="max-width: 18rem;">
+            <div class="card-body text-dark">
+              <h5 class="card-title text-center" style="color: #ffd369">
+                <strong>$</strong> 266.899.00
+              </h5>
+            </div>
+            <div class="card-footer bg-transparent border-dark text-center">
+              <strong>Efectivo Actual</strong>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="col ml-2 mr-2">
+
+          <!-- Pocket three -->
+          <div class="card border-dark mb-3" style="max-width: 18rem;">
+            <div class="card-body text-dark">
+              <h5 class="card-title text-center" style="color: #ffd369">
+                <strong>$</strong> 2'500.000,00
+              </h5>
+            </div>
+            <div class="card-footer bg-transparent border-dark text-center">
+              <strong>Ahorro Credito</strong>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+      <!-- Table of pockets -->
+      <div class="row p-5">
+        <table class="table">
+          <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table">
+          <thead class="thead-light">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
     </div>
+  </div>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
 </body>
-            
 </html>
