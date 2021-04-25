@@ -172,7 +172,7 @@
 }
 /* pagina principal */
 
-.nav{
+.nav_main{
     position: fixed;
     background-color: #ffd369;
     width: 20%;
@@ -191,7 +191,7 @@
 
 .navdiv .nav_input, .navdiv .nav_input_look{
     display: block;
-    width: 75%;
+    width: 100%;
     padding: 5% 15%;
     text-transform: capitalize;
     padding-right: 10%;
