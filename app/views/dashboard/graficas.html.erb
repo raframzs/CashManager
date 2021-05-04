@@ -6,30 +6,38 @@
     <link rel="icon" type="favicon" href="../favicon.png">
     <%# <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> %>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>Cash Manager</title>
     <style>
       .page {
           height: 100%;
       }
-        .details {
-            height: 100%;
-            padding: 30px;
-            display: grid;
-            grid-template-columns: 1fr 3fr;
-        }
       
-        .charts-sidebar {
-            height: 100%;
-            /* background: red; */
-        }
-        .display-4 {
-          margin-bottom: 50px;
-        }
+      .dash_board {
+          height: 100%;
+          display: grid;
+          grid-template-columns: 1fr 3fr;
+      }
       
-        .table-info {
-            /* background: blue; */
-        }
+      .sidebar-form {
+        padding: 30px;
+      }
+      .display-4 {
+        margin-bottom: 50px;
+      }
+      
+      .pocket-info {
+        padding: 50px;
+          background: #ffd369 ;
+      }
+      .pocket-content {
+        width: 100%;
+        height: 100%;
+        padding: 30px;
+        background-color: white;
+        border-radius: 30px;
+      }
     </style>
   </head>
   <body>
@@ -54,7 +62,8 @@
       </nav>
       <div class="details">
         <div class="dash_board">
-          <aside class="charts-sidebar">
+          <%# Sidebar Form %>
+          <aside class="sidebar-form">
             <h1 class="display-4">Gráficas</h1>
             <form action="#">
               <select name="pocket" id="pocket" class="form-select mb-3">
@@ -77,9 +86,53 @@
               </div>
             </form>
           </aside>
-          <section class="table-info">
+          <%# Grafics and tables %>
+          <section class="pocket-info">
+            <div class="pocket-content">
+              <canvas id="myChart"></canvas>
+            </div>
           </section>
         </div>
       </div>
+      <%# Scripts %>
+      <script>
+        const chartjs = document.getElementById
+        const labels = [
+          'January',
+          'February',
+          'March',
+          'April',
+          'May',
+          'June',
+        ];
+        const data = {
+          labels: labels,
+          datasets: [{
+            label: 'Flujo del Bolsillo',
+            backgroundColor: '#d4d656',
+            borderColor: '#d4d656',
+            data: [0, 2, 20, 30, 10, 3, 1],
+          },{
+            label: 'Ingresos del Bolsillo',
+            backgroundColor: '#32a852',
+            borderColor: '#32a852',
+            data: [0, 12, 43, 22, 60, 40, 15],
+          },{
+            label: 'Egresos del Bolsillo',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [0, 10, 5, 2, 20, 30, 45],
+          }]
+        };
+        const config = {
+          type: 'line',
+          data,
+          options: {}
+        };
+        let myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+          );
+      </script>
     </body>
   </html>
