@@ -28,67 +28,91 @@
     </div>
   </nav>
   <div class="details">
+
     <div class="dash_board">
-      <!-- New Pocket -->
-      <div class="row row-cols-1 row-cols-md-5 mb-5 text-center">
-          <div class="cont_placa">
-            <div class="placa">crear bolsillo</div>
+      <div id="crear_bolsillo" class="bolsillo">
+        Crear bolsillo
+        <div class="cont_btn">
+          <div class="submit" onclick="cancelar()">cancelar</div>
+          <div class="submit_i">crear</div>
         </div>
       </div>
-      <!-- Number of pockets -->
-      <div class="row p-5">
-        <div class="col ml-2 mr-2">
-
-          <!-- Pocket one -->
-          <div class="placa" style="max-width: 18rem;">
-            <div class="card-body text-dark">
-              <h5 class="card-title text-center" style="color: #ffd369">
-                <strong>$</strong> 1'234.567,21
-              </h5>
-            </div>
-            <div class="card-footer bg-transparent border-dark text-center">
-              <strong>Bancolombia Ahorros</strong>
-            </div>
+      <div id="bolsillos">
+        <!-- New Pocket -->
+        <div class="row row-cols-1 row-cols-md-5 mb-5 text-center">
+            <div class="cont_placa" onclick="crear()">
+              <div class="placa">crear bolsillo</div>
           </div>
-
         </div>
+        <!-- Number of pockets -->
+        <div class="row p-5">
+          <div class="col ml-2 mr-2">
 
-        <div class="col ml-2 mr-2">
+            <!-- Pocket one -->
+            <div class="placa" style="max-width: 18rem;">
+              <div class="card-body text-dark">
+                <h5 class="card-title text-center" style="color: #ffd369">
+                  <strong>$</strong> 1'234.567,21
+                </h5>
+              </div>
+              <div class="card-footer bg-transparent border-dark text-center">
+                <strong>Bancolombia Ahorros</strong>
+              </div>
+            </div>
 
-          <!-- Pocket two-->
-          <div class="placa" style="max-width: 18rem;">
-            <div class="card-body text-dark">
-              <h5 class="card-title text-center" style="color: #ffd369">
-                <strong>$</strong> 366.899,00
-              </h5>
-            </div>
-            <div class="card-footer bg-transparent border-dark text-center">
-              <strong>Efectivo Actual</strong>
-            </div>
           </div>
 
+          <div class="col ml-2 mr-2">
 
-        </div>
-        <div class="col ml-2 mr-2">
-
-          <!-- Pocket three -->
-          <div class="placa" style="max-width: 18rem;">
-            <div class="card-body text-dark">
-              <h5 class="card-title text-center" style="color: #ffd369">
-                <strong>$</strong> 2'500.000,00
-              </h5>
+            <!-- Pocket two-->
+            <div class="placa" style="max-width: 18rem;">
+              <div class="card-body text-dark">
+                <h5 class="card-title text-center" style="color: #ffd369">
+                  <strong>$</strong> 366.899,00
+                </h5>
+              </div>
+              <div class="card-footer bg-transparent border-dark text-center">
+                <strong>Efectivo Actual</strong>
+              </div>
             </div>
-            <div class="card-footer bg-transparent border-dark text-center">
-              <strong>Ahorro Credito</strong>
+
+
+          </div>
+          <div class="col ml-2 mr-2">
+
+            <!-- Pocket three -->
+            <div class="placa" style="max-width: 18rem;">
+              <div class="card-body text-dark">
+                <h5 class="card-title text-center" style="color: #ffd369">
+                  <strong>$</strong> 2'500.000,00
+                </h5>
+              </div>
+              <div class="card-footer bg-transparent border-dark text-center">
+                <strong>Ahorro Credito</strong>
+              </div>
             </div>
           </div>
-
 
         </div>
       </div>
     </div>
   </div>
   </div>
+  <script>
+  function crear(){
+    var btn = document.getElementById("bolsillos");
+    var form = document.getElementById("crear_bolsillo");
+    btn.style.display = "none";
+    form.style.display = "block";
+
+  }
+  function cancelar(){
+    var btn = document.getElementById("bolsillos");
+    var form = document.getElementById("crear_bolsillo");
+    btn.style.display = "block";
+    form.style.display = "none";
+  }
+  </script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
 </body>
