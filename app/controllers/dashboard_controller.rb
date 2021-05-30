@@ -3,7 +3,17 @@ class DashboardController < ApplicationController
         @name = "Cash Manager"
     end
     def bolsillos
-        @name = "Cash Manager"
+        @name = "Cash Manager"        
+        @bolsillos = Bolsillo.all
+    end
+    def crear_bolsillo    
+      @name = "Cash Manager"  
+      @nombre_bolsillo = params[:nombre_bolsillo]
+      @saldo = params[:saldo]
+        if @nombre_bolsillo != nil  || @saldo != nil
+          @crear = Bolsillo.create({nombre_bolsillo: @nombre_bolsillo , saldo: @saldo})
+          redirect_to action: :bolsillos
+        end
     end
     def graficas
         @name = "Cash Manager"
@@ -123,9 +133,7 @@ class DashboardController < ApplicationController
     def balances
         @name = "Cash Manager"
     end
-    def historico
-        @name = "Cash Manager"
-    end
+
     
 
 end

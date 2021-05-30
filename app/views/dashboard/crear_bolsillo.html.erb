@@ -30,32 +30,21 @@
     <div class="details">
 
       <div class="dash_board">
-        <div id="bolsillos">
-          <!-- New Pocket -->
-          
-          
-          <div class="row row-cols-1 row-cols-md-5 mb-5 text-center">
-          <%= link_to raw('<div class="placa">crear bolsillo</div>'), { action: 'crear_bolsillo' }, class: 'cont_placa'%>
-                
-          </div>
-          <!-- Number of pockets -->
-          <div class="row p-5">
-          <% @bolsillos.each do |b| %>
-            <div class="col-3 mb-5">
-
-              <!-- Pocket one -->
-              
-              <div class="placa" style="max-width: 18rem;">
-                <div class="card-body text-dark">
-                  <h5 class="card-title text-center" style="color: #ffd369">
-                    <strong>$</strong> <%= b.saldo %>
-                  </h5>
-                </div>
-                <div class="card-footer bg-transparent border-dark text-center">
-                  <strong><%= b.nombre_bolsillo %></strong>
-                </div>
-              </div>
-            </div>
+        <div id="crear_bolsillo" class="bolsillo">          
+          <br>
+          <strong>Crear bolsillo</strong>
+          <br>
+          <br>    
+          <br>      
+          <%= form_tag :action => "crear_bolsillo" do %>
+          <p>Nombre del bolsillo </p> <%= text_field_tag "nombre_bolsillo" %>
+          <p>Saldo inicial </p> <%= text_field_tag "saldo" %>
+          <br>
+          <br>
+          <br>
+          <div class="cont_btn">
+            <%= link_to raw('cancelar'), { action: 'bolsillos' }, class: 'submit' %>
+            <button class="submit_i">Crear</button>
             <% end %>
           </div>
         </div>
@@ -63,21 +52,6 @@
     </div>
   </div>
 </div>
-  <script>
-  function crear(){
-    var btn = document.getElementById("bolsillos");
-    var form = document.getElementById("crear_bolsillo");
-    btn.style.display = "none";
-    form.style.display = "block";
-
-  }
-  function cancelar(){
-    var btn = document.getElementById("bolsillos");
-    var form = document.getElementById("crear_bolsillo");
-    btn.style.display = "block";
-    form.style.display = "none";
-  }
-  </script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
 </body>

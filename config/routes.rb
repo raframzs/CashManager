@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   get 'dashboard/graficas'
   get 'dashboard/balances'
   get 'dashboard/bolsillos'
+  get 'dashboard/crear_bolsillo'
+  post 'dashboard/crear_bolsillo'
 end

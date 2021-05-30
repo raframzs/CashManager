@@ -1,0 +1,3 @@
+class Bolsillo < ApplicationRecord
+    
+end

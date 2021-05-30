@@ -344,8 +344,13 @@ a.nav_input:hover{
     height: auto;
     float: left;
     margin: 5%;
+    text-decoration:none;
+    border: none;
     margin-right: 0;
     margin-bottom: 0;
+}
+a:link{
+    text-decoration: none;
 }
 .placa, .mant {
     width: 500px;
@@ -355,6 +360,7 @@ a.nav_input:hover{
     padding: 20px;
     font-size: 30px;
     text-align: center;
+    text-decoration: none;
     text-transform: capitalize;
     border: none;
     background-color: #222831;
@@ -364,6 +370,7 @@ a.nav_input:hover{
     box-shadow: 0px 0px 25px -16px #000000;
     transition: all .4s ease-in-out;
 }
+
 .placa:hover,.mant:hover{
     cursor: pointer;
     color: #222831;
@@ -461,7 +468,7 @@ a.nav_input:hover{
     background-color: #ffffff;
 }
 .bolsillo{
-    display: none;
+    display: block;
     position: absolute;
     width: 96%;
     height: 100%;
@@ -470,6 +477,7 @@ a.nav_input:hover{
     padding: 20px;
     font-size: 30px;
     text-align: center;
+    text-decoration: none;
     text-transform: capitalize;
     border: none;
     background-color: #222831;
