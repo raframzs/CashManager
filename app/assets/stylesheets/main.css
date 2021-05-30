@@ -202,7 +202,7 @@
     /* transition: .2s ease-in-out; */
     transition:all .2s;
 }
-.navdiv .nav_input_look{
+.navdiv .nav_input_look,.navdiv  .nav_input_look:hover{
     cursor: initial;
     background-color: #222831;
     color: #ffffff;
@@ -313,6 +313,8 @@ a.nav_input:hover{
     height: 90%;
     position: relative;
     color: #808080;
+    margin: 2%;
+    text-align: center;
 }
 .dash_izq{
     position: relative;
@@ -346,28 +348,27 @@ a.nav_input:hover{
     margin-bottom: 0;
 }
 .placa, .mant{
-    width: 200px;
+    width: 500px;
     height: auto;
     box-sizing: border-box;
     position: relative;
-    padding: 20px 40px;
+    padding: 20px;
     font-size: 30px;
     text-align: center;
-    text-transform: uppercase;
+    text-transform: capitalize;
     border: none;
-    background-color: #CDCDCD;
-    color: #808080;
+    background-color: #222831;
+    color: #ffffff;
     outline: none;
-    border-radius: 5px;
+    border-radius: 15px;
     box-shadow: 0px 0px 25px -16px #000000;
     transition: all .4s ease-in-out;
 }
 .placa:hover,.mant:hover{
     cursor: pointer;
-    color: #000000;
+    color: #222831;
     background-color: #ffffff;
     transform: scale(1.1);
-    border-radius: 10px;
     transition: .2s ease-in;
 }
 .dash_conductor{

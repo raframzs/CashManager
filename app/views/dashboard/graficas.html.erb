@@ -23,7 +23,7 @@
       
       .sidebar-form {
         padding: 30px;
-      
+        margin-left:10%;
       }
       .sticky {
         position: sticky;
@@ -34,8 +34,12 @@
       }
       
       .pocket-info {
+        margin-left:15%;
         padding: 50px;
-          background: #ffd369 ;
+        box-shadow: 0px 0px 25px -16px #000000;
+        width:80%;
+        border-radius:50px;
+        right:0;
       }
       .pocket-content {
         width: 100%;
@@ -57,14 +61,11 @@
           <div class="user_icon">
             <div><i class="fas fa-user-alt"></i></div>
           </div>
-          <h2 class="nombre">
-            nombre usuario
-          </h2>
+          <h2 class="nombre">usuario</h2>
           <%= link_to raw('<i class="fas fa-home"></i>inicio'), {action: 'inicio'},class:'nav_input' %>
-          <%= link_to raw('<i class="fas fa-balance-scale-right"></i>bolsillos'), {action: 'bolsillos'},class:'nav_input' %>
-          <%= link_to raw('<i class="fas fa-chart-pie"></i>balances'), {action: 'balances'},class:'nav_input' %>
-          <a class="nav_input_look"><i class="fab fa-get-pocket"></i>graficas</a>
-          <%=link_to raw('<i class="fas fa-history"></i>historico'), {action: 'historico'}, class: 'nav_input'%>
+          <%= link_to raw('<i class="fab fa-get-pocket"></i>bolsillos'), {action: 'bolsillos'},class:'nav_input' %>
+          <%= link_to raw('<i class="fas fa-balance-scale-right"></i>balances'), {action: 'balances'},class:'nav_input' %>
+          <a class="nav_input_look"><i class="fas fa-chart-pie"></i>graficas</a>
         </div>
         <div class="footer">
           <p class="copy">&copy; 2020 <%= @name %></p>
@@ -75,7 +76,7 @@
           <%# Sidebar Form %>
           <aside class="sidebar-form">
             <div class="sticky">
-              <h1 class="display-4">Gráficas</h1>
+              <h1 class="display-4 mr-5 ">Gráficas</h1>
               <form action="#">
                 <select name="pocket" id="pocket" class="form-select mb-3">
                   <option value="0" Selected>Seleccione el Bolsillo</option>
